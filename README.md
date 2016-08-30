@@ -2,12 +2,43 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.11-webpack.2.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This seed project sets up Angular 2 with Express.js, Node.js and MySQL. It performs basic connection with the database and builds simple API using the technology stack. The frontend contains setup of routing with Angular 2 r.c.5. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+Best of Luck!
+
+## Installation
+
+To use this seed project, download or clone this repository and go to the project folder and follow the steps below:
+
+`npm install`
+
+`cd backend`
+
+`npm install`
+
+Create a new tab in your terminal/command line and in there log in to your local MySQL database and follow the steps below:
+
+CREATE DATABASE webpackcli;
+
+USE webpackcli;
+
+CREATE TABLE users (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+	username VARCHAR(30) NOT NULL PRIMARY KEY,
+	hashedpassword VARCHAR(255) NOT NULL,
+	CONSTRAINT user_id UNIQUE(id) 
+);
+
+Once completed, run in the backend folder:
+
+`node server` 
+
+Then create a new terminal or command line tab and go to the project folder and run `ng serve` for a dev server. 
+
+In your browswer, navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 ## Build
 
@@ -21,11 +52,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
 Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
