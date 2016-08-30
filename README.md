@@ -20,16 +20,18 @@ To use this seed project, download or clone this repository and go to the projec
 
 Create a new tab in your terminal/command line and in there log in to your local MySQL database and follow the steps below:
 
-CREATE DATABASE webpackcli;
+`CREATE DATABASE webpackcli;`
 
-USE webpackcli;
+`USE webpackcli;`
 
+```mysql
 CREATE TABLE users (
 	id INT(11) NOT NULL AUTO_INCREMENT,
 	username VARCHAR(30) NOT NULL PRIMARY KEY,
 	hashedpassword VARCHAR(255) NOT NULL,
 	CONSTRAINT user_id UNIQUE(id) 
 );
+```
 
 Once completed, run in the backend folder:
 
