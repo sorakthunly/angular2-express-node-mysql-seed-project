@@ -1,0 +1,28 @@
+<h1>
+  {{title}}
+</h1>
+<h3>This form will add the user data with encrypted password to the MySQL database:</h3><br>
+
+<form (submit)="addUser(username, password)">
+	<input class="form-control" type="text" name="username" [(ngModel)]="username" placeholder="Enter Username"><br>
+	<input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Enter Password"><br>
+	<button class="btn btn-default btn-block" type="submit">Add</button>
+</form>
+<br>
+
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title" *ngIf="results.length == 0">
+				No Users
+			</h3>
+			<h3 class="panel-title" *ngIf="results.length !== 0">
+				Users Added:
+			</h3>
+		</div>
+	</div>
+	<div *ngFor="let user of results" class="panel panel-body">
+		Username: {{user.username}}
+	</div>
+	<br>
+</div>
