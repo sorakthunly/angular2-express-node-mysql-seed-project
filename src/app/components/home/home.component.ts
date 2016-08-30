@@ -39,7 +39,9 @@ export class HomeComponent implements OnInit {
 
 	  var result = this.userService.addUser(data)
 	    .subscribe(res => {
-	    	this.results.unshift(data);
+	    	if(res.success == "true") {
+	    		this.results.unshift(data);
+	    	}
 	      this.password = "";
 	      this.username = "";
 	      console.log(res);
