@@ -5,9 +5,12 @@
   },
   "apps": [
     {
-      "main": "src/main.ts",
-      "tsconfig": "src/tsconfig.json",
-      "mobile": false
+      "main": "main.ts",
+      "tsconfig": "tsconfig.json",
+      "polyfills": "polyfills.ts",
+      "mobile": false,
+      "prefix": "app",
+      "root": "src"
     }
   ],
   "addons": [],
@@ -23,8 +26,6 @@
     }
   },
   "defaults": {
-    "prefix": "app",
-    "sourceDir": "src",
     "styleExt": "css",
     "prefixInterfaces": false,
     "lazyRoutePrefix": "+"

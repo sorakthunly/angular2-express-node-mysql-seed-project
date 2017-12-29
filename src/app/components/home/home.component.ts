@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
 
 	getUsers() {
 	  this.userService.getUsers()
-	  .map(res => res.json())
 	  .subscribe(results => this.results = results);
 	}
 
@@ -47,5 +46,5 @@ export class HomeComponent implements OnInit {
 	      console.log(res);
 	    });
 	}
-	
+
 }

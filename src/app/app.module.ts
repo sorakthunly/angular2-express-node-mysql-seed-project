@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -26,7 +26,7 @@ import 'rxjs/Observable';
     BrowserModule,
     CommonModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     routing
   ],
   providers: [UserService],
