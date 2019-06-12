@@ -4,6 +4,12 @@ var app = express();
 // Import User Module Containing Functions Related To User Data
 var user = require('../models/user');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // API Routes
 app.get('/', function(req, res) {
 
@@ -14,7 +20,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/adduser', function(req, res, next) {
-	
+
 	var data = req.body;
 	user.findByUsername(data.username, function(err, rows, fields) {
 		if(rows.length == 1) {

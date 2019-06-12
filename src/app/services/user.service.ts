@@ -1,26 +1,24 @@
 import { Injectable, Inject } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 
 export class UserService {
-	
+
 	http: any;
 
-	constructor(@Inject(Http) http) {
+	constructor(@Inject(HttpClient) http) {
 		this.http = http;
 	}
 
 	getUsers() {
-		return this.http.get('http://localhost:3000/');
+		return this.http.get('http://localhost:3300/');
 	}
 
 	addUser(data) {
-		let headers = new Headers({"Content-Type": "application/json"});
-		let options = new RequestOptions({ headers: headers });
-
-		return this.http.post('http://localhost:3000/adduser', JSON.stringify(data), options)
-			.map(res => res.json());
+		const headers = new HttpHeaders({"Content-Type": "application/json"});
+		return this.http.post('http://localhost:3300/adduser',
+      JSON.stringify(data), { headers: headers });
 	}
 
 
